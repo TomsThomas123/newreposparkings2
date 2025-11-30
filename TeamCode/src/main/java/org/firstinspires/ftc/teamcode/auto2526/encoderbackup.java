@@ -88,13 +88,15 @@ public class encoderbackup extends LinearOpMode {
 
         imu.initialize(parameters);
 
-        waitForStart();
+        waitForStart
+                ();
         outake1.setPower(1);
 
         ForwardBackward(0.5,11, -1);
         intake.setPower(1);
         transfer1.setPower(-1);
         intake.setPower(1);
+
 
 
 
