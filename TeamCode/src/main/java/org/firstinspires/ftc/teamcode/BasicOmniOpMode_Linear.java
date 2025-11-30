@@ -82,8 +82,8 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
     private DcMotor frontRightDrive = null;
     private DcMotor backRightDrive = null;
     private DcMotor intake = null;
-    private DcMotor outake1 = null;
-    private DcMotor outake2 = null;
+    private DcMotorEx outake1 = null;
+    private DcMotorEx outake2 = null;
     private DcMotor transfer1 = null;
 
     private Servo   stop      = null;
@@ -98,8 +98,8 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
         frontRightDrive = hardwareMap.get(DcMotor.class, "front_Right_drive");
         backRightDrive = hardwareMap.get(DcMotor.class, "back_Right_drive");
         intake = hardwareMap.get(DcMotor.class, "intake");
-        outake1 = hardwareMap.get(DcMotor.class, "outake1");
-        outake2 = hardwareMap.get(DcMotor.class, "outake2");
+        outake1 = hardwareMap.get(DcMotorEx.class, "outake1");
+        outake2 = hardwareMap.get(DcMotorEx.class, "outake2");
         transfer1 = hardwareMap.get(DcMotor.class, "transfer99");
         stop = hardwareMap.get(Servo.class, "stop");
         // ########################################################################################
@@ -226,6 +226,8 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Front left/Right", "%4.2f, %4.2f", frontLeftPower, frontRightPower);
+            telemetry.addData("Current Outake1 Velocity: ", "%.7f", outake1.getVelocity());
+            telemetry.addData("Current Outake2 Velocity: ", "%.7f", outake2.getVelocity());
             telemetry.addData("Back  left/Right", "%4.2f, %4.2f", backLeftPower, backRightPower);
             telemetry.update();
         }
