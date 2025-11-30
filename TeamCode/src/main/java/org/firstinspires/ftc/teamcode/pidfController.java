@@ -29,7 +29,7 @@ public class pidfController extends OpMode {
     public void init(){
         pidf = new PIDFController(Kp,Ki,Kd, Kv);
         pidf.reset();
-        motor = hardwareMap.get(DcMotorEx.class, "motor");
+        motor = hardwareMap.get(DcMotorEx.class, "outake2");
         motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
     }
