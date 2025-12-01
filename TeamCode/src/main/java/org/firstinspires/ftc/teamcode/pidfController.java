@@ -48,7 +48,7 @@ public class pidfController extends OpMode {
         telemetry.update();
 
 
-        double output = pidf.calculate(state, 1000);
+        double output = pidf.calculate(state, -1000);
         motor.setVelocity(output);
 
 
