@@ -222,12 +222,14 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
             frontRightDrive.setPower(frontRightPower);
             backLeftDrive.setPower(backLeftPower);
             backRightDrive.setPower(backRightPower);
+            double out2vel = outake2.getVelocity();
+            double out1vel = outake1.getVelocity();
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Front left/Right", "%4.2f, %4.2f", frontLeftPower, frontRightPower);
-            telemetry.addData("Current Outake1 Velocity: ", "%.7f", outake1.getVelocity());
-            telemetry.addData("Current Outake2 Velocity: ", "%.7f", outake2.getVelocity());
+            telemetry.addData("Current Outake1 Velocity: ", "%.7f", out1vel);
+            telemetry.addData("Current Outake2 Velocity: ", "%.7f", out2vel);
             telemetry.addData("Back  left/Right", "%4.2f, %4.2f", backLeftPower, backRightPower);
             telemetry.update();
         }
