@@ -20,10 +20,10 @@ public class pidfController extends OpMode {
     private PIDFController pidf;
 
 
-    double Kp = 0;
+    double Kp = 0.5;
     double Ki = 0;
     double Kd = 0;
-    double Kv = 0.01;
+    double Kv = 0.0075;
 
 
 
@@ -48,7 +48,7 @@ public class pidfController extends OpMode {
         telemetry.update();
 
 
-        double output = pidf.calculate(state, -1000);
+        double output = pidf.calculate(state, 1000);
         motor.setVelocity(output);
 
 
